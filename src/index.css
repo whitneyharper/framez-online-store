@@ -1,13 +1,71 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Biryani', sans-serif;
+}
+
+.nav{
+  background-color: #4d0000;
+  font-weight: 700;
+}
+
+.nav a {
+  color: white;
+  margin: 0 15px 0 15px;
+  font-weight: 400;
+}
+
+.hero{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url(./assests/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 43vh;
+}
+
+.hero h2 {
+  margin-top: 60px;
+  font-size: 65px;
+}
+
+.hero h3{
+  font-size: 30px;
+}
+
+.feature{
+  background-color: #7c2c2c;
+}
+
+.feature h3{
+  font-size: 30px;
+}
+
+.bg{
+  background-color: floralwhite;
+}
+
+.confirmation{
+  background-color: #e1e1e1;
+}
+
+@media only screen and (max-width: 546px){
+  .hero h2 {
+    font-size: 50px;
+  }
+
+  .hero h3{
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .image{
+    width: 250px; /* You can set the dimensions to whatever you want */
+    height: 200px;
+    object-fit: cover;
+  }
 }
