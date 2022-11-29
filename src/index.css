@@ -8,6 +8,10 @@ body {
   font-family: 'Biryani', sans-serif;
 }
 
+a{
+  text-decoration: none;
+}
+
 .nav{
   background-color: #4d0000;
   font-weight: 700;
@@ -15,7 +19,7 @@ body {
 
 .nav a {
   color: white;
-  margin: 0 15px 0 15px;
+  margin: 0 10px 0 10px;
   font-weight: 400;
 }
 
