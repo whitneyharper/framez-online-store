@@ -6,7 +6,7 @@ import CheckoutForm from "../components/CheckoutForm";
 
 const Checkout = () => {
 
-    const stripePromise = loadStripe('pk_test_51LzPFoAv5HGzCXnqfST0SSQp5Nim5wXuZjJO27dMDwhL4ul5ZSA2QphdBkiZAaGFD12I92jwWQTbpfQqVrMOnfuv00tyXkVGdM');
+    const stripePromise = loadStripe(process.env.REACT_APP_ENV_API);
 
     return (    
         <Elements stripe={stripePromise}>
