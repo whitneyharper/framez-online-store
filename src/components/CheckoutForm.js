@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ProductContext } from '../context/products'
 import { CartContext } from "../context/cart";
-import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Formik } from 'formik';
@@ -11,7 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
-import Alert from 'react-bootstrap/Alert';
+import ErrorAlert from "./ErrorAlert";
+import SuccessAlert from "./SuccessAlert";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
 
@@ -48,19 +48,25 @@ const CheckoutForm = () => {
     const { checkout } = useContext(ProductContext);
     const [orderDetails, setOrderDetails] = useState({ cart, total, address: null, token: null });
     const [error, setError] = useState(null);
-    const [process, setProcess] = useState(false);
+    const [processed, setProcessed] = useState(null);
+    const [failed, setFailed] = useState(null);
     const stripe = useStripe();
     const elements = useElements();
-    const navigate = useNavigate();
+    
 
     useEffect(() => {
         const processOrder = async () => {
-            if (orderDetails.token) {
-                const response = await checkout(orderDetails);
-                if (response === "success") {
-                    setProcess(true);
-                }
-              }
+            try {
+                if (orderDetails.token) {
+                    const response = await checkout(orderDetails);
+                    if (response === "success") {
+                        setProcessed(true);
+                    }
+                  }
+            } catch(err){
+                setFailed(true);
+                console.log(err)
+            }
         }
         processOrder();
       }, [orderDetails]);
@@ -78,15 +84,8 @@ const CheckoutForm = () => {
     return(
         <Container>    
             <Row>
-            {process ? <Alert variant="success" className="mt-3">                
-                <p>Order has been processed</p>
-                <hr />
-                <div className="d-flex justify-content-end">
-                    <Button onClick={() => navigate("/confirmation")} variant="outline-success">
-                        Close
-                    </Button>
-                </div>
-            </Alert> : null}            
+            {processed ? <SuccessAlert /> : null}      
+            {failed ? <ErrorAlert /> : null}  
                 <Col md={4} className="order-md-2 mb-4">
                     <h4 className="text-muted fw-bold">Your cart</h4>
                     <ListGroup className="border-3">
@@ -256,7 +255,7 @@ const CheckoutForm = () => {
                         </Row>
                         <Row>
                             <Col className="d-grid gap-2 mb-5">
-                                <Button type="submit">Submit Payment</Button>
+                                <Button type="submit" id="payment-btn">Submit Payment</Button>
                             </Col>
                         </Row>                        
                         </Form>

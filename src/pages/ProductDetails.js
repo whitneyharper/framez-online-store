@@ -32,7 +32,7 @@ const ProductDetails = () => {
                 <Col md={6} className="mb-5 mt-md-5">
                     <h3 className="mb-3">{name}</h3>
                     <h4 className="mb-3">${price}</h4>
-                    <Button variant="secondary"
+                    <Button id="product-btn"
                        onClick={() => {
                             addToCart({ ...product, id });
                             navigate("/cart");

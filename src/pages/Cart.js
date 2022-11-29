@@ -47,10 +47,10 @@ const Cart = () => {
                     </Card>
                 ))}     
                 <Col lg={6} className="d-grid mb-3">
-                    <Button variant="secondary" size="lg" onClick={() => navigate("/products")}>Continue Shopping</Button>
+                    <Button id="shopping-btn" size="lg" onClick={() => navigate("/products")}>Continue Shopping</Button>
                 </Col>           
                 <Col lg={6} className="d-grid mb-4">
-                    <Button variant="secondary" size="lg" onClick={() => navigate("/checkout")}>Checkout</Button>
+                    <Button id="checkout-btn" size="lg" onClick={() => navigate("/checkout")}>Checkout</Button>
                 </Col>
            </Row> 
         </Container>

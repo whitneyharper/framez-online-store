@@ -5,12 +5,13 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Hero from '../components/Hero';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ProductContext } from '../context/products';
 
 
 const Home = () => {
     const { featured, loading } = useContext(ProductContext);
+    const navigate = useNavigate();
 
     if (loading) {
         return <h3>Loading...</h3>
@@ -32,7 +33,7 @@ const Home = () => {
                             <Card className="text-center border border-white shadow-lg bg border-2 border-opacity-50 p-2 mb-3 mw-50">
                                 <Card.Img variant="top" src={image} className="img-fluid rounded shadow-lg image mx-auto d-block mt-3"/>
                                 <Card.Body className="d-grid">
-                                    <Button variant="secondary"><Link to={"/products/" + id} className="btn text-white">DETAILS</Link></Button>
+                                    <Button onClick={() => navigate(`/products/${id}`)} size="lg" id="product-btn">Details</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
