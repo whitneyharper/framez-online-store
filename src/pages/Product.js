@@ -17,7 +17,7 @@ const Products = () => {
 
     return(
         <Container>
-            <Row xs={1} md={2} lg={4} className="mt-5 g-4">
+            <Row xs={1} md={2} lg={4} className="my-5 g-4">
                 {products.length === 0 ? <h3>No Products</h3> : products.map(({ image, id, name, price}) => (
                     <Col key={id}>
                         <Card className="text-center border border-white shadow-lg bg border-2 border-opacity-50 p-2 mb-3">
