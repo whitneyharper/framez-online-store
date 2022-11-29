@@ -25,7 +25,7 @@ const ProductProvider = ({ children }) => {
 
       if (response) {
         const orderResponse = await API.post("ordersAPI", "/orders", {  body: response });
-        setOrderID(orderResponse.payload.order_id)
+        setOrderID(orderResponse.id)
       }
       return "success";
     } catch(err){

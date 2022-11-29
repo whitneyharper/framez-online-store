@@ -2,6 +2,14 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.4.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
+    "ProductOrderTableName": {
+      "Type": "String",
+      "Default": "product-orders"
+    },
+    "OrderTableName": {
+      "Type": "String",
+      "Default": "orders"
+    },
     "CloudWatchRule": {
       "Type": "String",
       "Default": "NONE",
@@ -69,6 +77,12 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "ORDER_TABLE": {
+              "Ref": "OrderTableName"
+            },
+            "PRODUCT_ORDER_TABLE": {
+              "Ref": "ProductOrderTableName"
             }
           }
         },

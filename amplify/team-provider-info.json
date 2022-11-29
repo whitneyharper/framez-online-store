@@ -31,7 +31,7 @@
         },
         "ordersFunctions": {
           "deploymentBucketName": "amplify-framez-dev-163202-deployment",
-          "s3Key": "amplify-builds/ordersFunctions-784e684a7a556a733657-build.zip"
+          "s3Key": "amplify-builds/ordersFunctions-5255526e367343635966-build.zip"
         }
       },
       "api": {

@@ -29,9 +29,9 @@ const { v4: uuidv4 } = require("uuid");
 const AWS = require("aws-sdk");
 const documentClient = new AWS.DynamoDB.DocumentClient();
 
-const ORDER_TABLE = "orders";
+const ORDER_TABLE = process.env.ORDER_TABLE;
 const ORDER_TYPE = "Order";
-const PRODUCT_ORDER_TABLE = "product-orders";
+const PRODUCT_ORDER_TABLE = process.env.PRODUCT_ORDER_TABLE;
 const PRODUCT_ORDER_TYPE = "ProductOrder";
 
 const createOrder = async (payload) => {
