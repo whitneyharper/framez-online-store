@@ -30,10 +30,23 @@ A responsive full-stack e-commerce store with payment functionality. This projec
 - User can add and remove products from cart.
 - User can adjust quantity.
 - Order confirmation page with order number for users when payment is success.
+- Checkout form validation.
 
 ### Screenshot
 
 ![](./images/framez.jpg)
+
+![](./images/products.jpg)
+
+![](./images/product.jpg)
+
+![](./images/cart.jpg)
+
+![](./images/checkout.jpg)
+
+![](./images/payment-success.jpg)
+
+![](./images/confirmation.jpg)
 
 ## Getting Started
 
