@@ -23,7 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 #amplify-do-not-edit-begin
-amplify
+amplify/backend/function/productsFuction/productsFuction-cloudformation-template.json
+amplify/backend/function/paymentFunction/paymentFunction-cloudformation-template.json
+amplify/backend/function/ordersFunctions/ordersFunctions-cloudformation-template.json
 amplify/team-provider-info.json
 amplify/\#current-cloud-backend
 amplify/.config/local-*

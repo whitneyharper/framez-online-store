@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "paths": {
+    "/payment": {
+      "name": "/payment",
+      "lambdaFunction": "paymentFunction",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create"
+        ]
+      }
+    }
+  }
+}
