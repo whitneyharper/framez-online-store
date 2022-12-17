@@ -38,7 +38,7 @@ const schema = yup.object().shape({
     lastName: yup.string().required("Last name is required"),
     address: yup.string().required("Address is required"),
     city: yup.string().required("City is required"),
-    state: yup.string().required("State is required"),
+    state: yup.string().required("State is required").matches(/(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])/, "Please use state abbreviations"),
     zip: yup.string().required("Zip is required"),    
 });
 
@@ -173,8 +173,7 @@ const CheckoutForm = () => {
                             <Form.Label>Last name</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="lastName"
-                               
+                                name="lastName"                               
                                 onChange={handleChange}
                                 isInvalid={!!errors.lastName}
                             />
@@ -203,8 +202,7 @@ const CheckoutForm = () => {
                             <Form.Control
                                 type="text"
                                 placeholder="City"
-                                name="city"
-                            
+                                name="city"                            
                                 onChange={handleChange}
                                 isInvalid={!!errors.city}
                             />
@@ -219,8 +217,7 @@ const CheckoutForm = () => {
                             <Form.Control
                                 type="text"
                                 placeholder="State"
-                                name="state"
-                             
+                                name="state"                             
                                 onChange={handleChange}
                                 isInvalid={!!errors.state}
                             />
@@ -234,8 +231,7 @@ const CheckoutForm = () => {
                             <Form.Control
                                 type="text"
                                 placeholder="Zip"
-                                name="zip"
-                           
+                                name="zip"                           
                                 onChange={handleChange}
                                 isInvalid={!!errors.zip}
                             />

@@ -32,7 +32,7 @@ A responsive full-stack e-commerce store with payment functionality. This projec
 - Order confirmation page with order number for users when payment is success.
 - Checkout form validation.
 
-### Screenshot
+### Screenshots
 
 ![](./images/framez.jpg)
 

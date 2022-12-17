@@ -22,7 +22,7 @@ function Confirmation() {
                         <p>Your order ID is : {id}</p>
                     </Col>
                     <Col xs={12} className="mt-2 mb-5">
-                        <Button className="p-3" onClick={() => navigate("/products")}>CONTINUE SHOPPING</Button>
+                        <Button id="shopping-btn" className="p-3" onClick={() => navigate("/products")}>CONTINUE SHOPPING</Button>
                     </Col>
                 </Card.Body>
             </Card>         
